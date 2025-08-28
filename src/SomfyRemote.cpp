@@ -83,7 +83,7 @@ void SomfyRemote::sendFrame(byte *frame, byte sync) {
 		sendLow(9565);
 		delay(80);
 	}
-/*
+
 	// Hardware sync: two sync for the first frame, seven for the following ones.
 	for (int i = 0; i < sync; i++) {
 		sendHigh(4 * SYMBOL);
@@ -107,7 +107,7 @@ void SomfyRemote::sendFrame(byte *frame, byte sync) {
 
 	// Inter-frame silence
 	sendLow(415);
-	delay(30);*/
+	delay(30);
 }
 
 void SomfyRemote::sendHigh(uint16_t durationInMicroseconds) {
