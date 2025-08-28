@@ -95,19 +95,19 @@ void SomfyRemote::sendFrame(byte *frame, byte sync) {
 	sendLow(SYMBOL);
 
 	// Data: bits are sent one by one, starting with the MSB.
-	for (byte i = 0; i < 56; i++) {
-		if (((frame[i / 8] >> (7 - (i % 8))) & 1) == 1) {
-			sendLow(SYMBOL);
-			sendHigh(SYMBOL);
-		} else {
-			sendHigh(SYMBOL);
-			sendLow(SYMBOL);
-		}
-	}
+//	for (byte i = 0; i < 56; i++) {
+//		if (((frame[i / 8] >> (7 - (i % 8))) & 1) == 1) {
+//			sendLow(SYMBOL);
+//			sendHigh(SYMBOL);
+//		} else {
+//			sendHigh(SYMBOL);
+//			sendLow(SYMBOL);
+//		}
+//	}
 
 	// Inter-frame silence
-	sendLow(415);
-	delay(30);
+//	sendLow(415);
+//	delay(30);
 }
 
 void SomfyRemote::sendHigh(uint16_t durationInMicroseconds) {
